@@ -14,4 +14,4 @@ Use at your own risk, this software comes with no guarantee.
 Since this is just an example project the best place to ask about cropperjs would be directly on their official
 github page https://github.com/fengyuanchen/cropperjs
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/github/choiley/angular-cropperjsv2)
+[Edit on StackBlitz ⚡️](https://stackblitz.com/github/choiley/cropperjsvs2-angular)
