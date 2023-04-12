@@ -1,0 +1,59 @@
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-8 picture">
+            <cropper-canvas #cropper background style="" class="h-100">
+                <cropper-image #cropperimage src="assets/images/kyoto.jpg" alt="Picture"></cropper-image>
+                <cropper-shade hidden></cropper-shade>
+                <cropper-handle action="select" plain></cropper-handle>
+                <cropper-selection id="cropperSelection" #cropperselection initial-coverage="0.5" movable resizable zoomable (change)="onSelectionChange($event)">
+                    <cropper-grid role="grid" covered></cropper-grid>
+                    <cropper-crosshair centered></cropper-crosshair>
+                    <cropper-handle action="move" theme-color="rgba(255, 255, 255, 0.35)"></cropper-handle>
+                    <cropper-handle action="n-resize"></cropper-handle>
+                    <cropper-handle action="e-resize"></cropper-handle>
+                    <cropper-handle action="s-resize"></cropper-handle>
+                    <cropper-handle action="w-resize"></cropper-handle>
+                    <cropper-handle action="ne-resize"></cropper-handle>
+                    <cropper-handle action="nw-resize"></cropper-handle>
+                    <cropper-handle action="se-resize"></cropper-handle>
+                    <cropper-handle action="sw-resize"></cropper-handle>
+                </cropper-selection>
+            </cropper-canvas>
+        </div>
+        <div class="col-4">
+            <cropper-viewer selection="#cropperSelection" #cropperviewer class="w-100 height100"></cropper-viewer>
+
+            <div class="mt-2 mb-2">
+                <button class="btn-primary mr-2" (click)="onZoomIn()">Zoom in</button>
+                <button class="btn-primary" (click)="onZoomOut()">Zoom out</button>
+            </div>
+            <div class="mb-2">
+                <button class="btn-primary mr-2" (click)="onMove(-2.25, 0)">
+                    <span class="fa fa-arrow-left"></span>
+                </button>
+                <button class="btn-primary mr-2" (click)="onMove(2.25, 0)">
+                    <span class="fa fa-arrow-right"></span>
+                </button>
+                <button class="btn-primary mr-2" (click)="onMove(0, -2.25)">
+                    <span class="fa fa-arrow-up"></span>
+                </button>
+                <button class="btn-primary mr-2" (click)="onMove(0, 2.25)">
+                    <span class="fa fa-arrow-down"></span>
+                </button>
+                <button class="btn-primary" (click)="onCenter()">
+                    $center()
+                </button>
+            </div>
+            <div class="mb-2">
+                <button class="btn-primary mr-2" (click)="onRotate('-45deg')">
+                    <span class="fa fa-rotate-left"></span>
+                </button>
+                <button class="btn-primary" (click)="onRotate('45deg')">
+                    <span class="fa fa-rotate-right"></span>
+                </button>
+            </div>
+            <button class="btn-primary mr-2" (click)="onToDataUrl()">toDataurl()</button>
+            <textarea id="canvas-textarea" class="d-block mt-2 w-100 height100"></textarea>
+        </div>
+    </div>
+</div>
